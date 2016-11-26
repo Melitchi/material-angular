@@ -2,53 +2,7 @@
 
 /* Controllers */
 
-angular
-.module('Madera', [ 'ngMessages','ngMaterial','ngRoute', 'ngMdIcons'])
-.config(function($mdThemingProvider) {
-  var customBlueMap = 		$mdThemingProvider.extendPalette('orange', {
-    'contrastDefaultColor': 'light',
-    'contrastDarkColors': ['50'],
-    '50': 'ffffff'
-  });
-  $mdThemingProvider.definePalette('customBlue', customBlueMap);
-  $mdThemingProvider.theme('default')
-    .primaryPalette('customBlue', {
-      'default': '500',
-      'hue-1': '50'
-    })
-    .accentPalette('pink');
-  $mdThemingProvider.theme('input', 'default')
-        .primaryPalette('grey')
-})
-
-.config(['$routeProvider',
-function ($routeProvider) {
-  $routeProvider
-  .when('/index', {
-    templateUrl: 'index.html',
-    controller: 'connectCtrl'
-  })
-  .when('/accueil', {
-    templateUrl: 'accueil.html',
-    controller: 'accueilCtrl'
-  })
-  .when('/liste/:param', {
-    templateUrl: 'liste.html',
-    controller: 'listCtrl'
-  })
-  .when('/edit_devis', {
-    templateUrl: 'devis.html',
-    controller: 'formCtrl'
-  })
-  .when('/compte', {
-    templateUrl: 'compte.html',
-    controller: 'compteCtrl'
-  })
-  .otherwise({
-    redirectTo: '/liste/devis'
-  });
-}
-])
+app
 
 /////////////////////// list controller  ///////////////////////////////////////////////////
 .controller('listCtrl', ['$scope', '$ngRoute', function ($scope, $ngRoute) {

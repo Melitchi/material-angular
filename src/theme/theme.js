@@ -1,7 +1,6 @@
-angular
-.module('Madera', [ 'ngMessages','ngMaterial','ngRoute', 'ngMdIcons'])
+app
 .config(function($mdThemingProvider) {
-  var customBlueMap = 		$mdThemingProvider.extendPalette('light-blue', {
+  var customBlueMap = 		$mdThemingProvider.extendPalette('orange', {
     'contrastDefaultColor': 'light',
     'contrastDarkColors': ['50'],
     '50': 'ffffff'
@@ -15,4 +14,4 @@ angular
     .accentPalette('pink');
   $mdThemingProvider.theme('input', 'default')
         .primaryPalette('grey')
-});
+})
