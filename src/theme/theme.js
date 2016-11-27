@@ -1,3 +1,4 @@
+'use strict';
 app
 .config(function($mdThemingProvider) {
   var customBlueMap = 		$mdThemingProvider.extendPalette('orange', {
