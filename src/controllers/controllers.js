@@ -3,14 +3,45 @@
 /* Controllers */
 
 app
-/////////////////////// list controller  ///////////////////////////////////////////////////
+/////////////////////// tabs controller  ///////////////////////////////////////////////////
+
+.controller('tabCtrl', function($scope, $location, $log) {
+        $scope.selectedIndex = 0;
+        $scope.$watch('selectedIndex', function(current, old) {
+            switch (current) {
+                case 0:
+                    $location.url("/accueil");
+                    break;
+                case 1:
+                    $location.url("/liste/devis");
+                    break;
+                case 2:
+                    $location.url("/liste/catalogue");
+                    break;
+                case 3:
+                    $location.url("/liste/fournisseurs");
+                    break;
+            }
+        });
+    })
+/////////////////////// liste controller  ///////////////////////////////////////////////////
 .controller('listCtrl',  function ($scope, $routeParams, devisProvider) {
   console.log("heyo!");
   var param=$routeParams.param; // on récupère la valeur passée dans l'url
   $scope.displayDevis=false;
   $scope.displayCatalogue=false;
   $scope.displayFournisseur=false;
-  $scope.sortReverse = false;  // sens du tri par defaut
+  $scope.sortReverse = false; // sens du tri par defaut
+  $scope.setReverseIcon = function (){
+    if ( $scope.sortReverse == false) {
+      $scope.reverseIcon ="keyboard_arrow_down"
+      console.log("false "+$scope.reverseIcon);
+    }else {
+      $scope.reverseIcon ="keyboard_arrow_up"
+      console.log("true "+$scope.reverseIcon);
+    }
+  };
+  $scope.setReverseIcon();
   $scope.searchText = ''; // vide le champ de recherche
   // Test pour récupérer les données correspondant au paramètre envoyé
   $scope.getSelectedText = function() {
@@ -27,6 +58,7 @@ app
       $scope.datas = devisProvider.getDevis();
       $scope.labels=devisProvider.getDevisLabels();
       $scope.displayDevis=true;
+
       /*$scope.getAvancementColor = function (input) {
         if (input == "refusé") {
           return "bold redFont";

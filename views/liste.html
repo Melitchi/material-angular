@@ -4,19 +4,19 @@
   <md-card>
     <h2>{{pageTitle}}</h2>
     <div layout="row">
-      <md-input-container flex="15">
+      <md-input-container flex-gt-xs="">
         <label>Rechercher</label>
         <input ng-model="searchText" type="text">
       </md-input-container>
-      <md-input-container flex="15">
+      <md-input-container flex-gt-xs="">
         <label>Trier par</label>
-        <md-select ng-model="sortType" md-selected-text="getSelectedText()">
+        <md-select ng-model="sortType">
           <md-option ng-value="label.value" ng-repeat="label in labels ">{{ label.name }}</md-option>
         </md-select>
       </md-input-container>
-      <md-input-container flex="5">
-        <md-button aria-label="reverse" ng-click="sortReverse = !sortReverse">
-          <ng-md-icon icon="keyboard_arrow_up"></ng-md-icon>
+      <md-input-container flex-gt-xs="">
+        <md-button aria-label="reverse" ng-click="sortReverse = !sortReverse ; setReverseIcon()">
+          <ng-md-icon icon="{{reverseIcon}}"></ng-md-icon>
         </md-button>
       </md-input-container>
     </div>
