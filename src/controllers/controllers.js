@@ -10,15 +10,21 @@ app
   $scope.displayDevis=false;
   //$scope.displayCatalogue=false;
   //$scope.displayFournisseur=false;
-  //$scope.sortReverse = false;  // sens du tri par defaut
-  //$scope.searchText = ''; // vide le champ de recherche
+  $scope.sortReverse = true;  // sens du tri par defaut
+  $scope.searchText = ''; // vide le champ de recherche
   // Test pour récupérer les données correspondant au paramètre envoyé
   $scope.pageTitle ="titre switch";
-
+  $scope.getSelectedText = function() {
+          if ($scope.sortType !== undefined) {
+            console.log("You have selected: Item " + $scope.sortType);
+          } else {
+            console.log("Please select an item");
+          }
+        };
   switch (param) {
     case "devis":
     $scope.pageTitle ="Liste des devis";
-    $scope.sortType = 'num_devis'; // tri sur le num_devis par defaut
+  //  $scope.sortType = 'num_devis'; // tri sur le num_devis par defaut
     $scope.datas = devisProvider.getDevis();
     $scope.labels=devisProvider.getDevisLabels();
     $scope.displayDevis=true;

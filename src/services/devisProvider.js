@@ -1,11 +1,17 @@
 'use strict';
 var devisLabel=[
-  {"name":"N° devis"},
-  {"name":"Commercial"},
-  {"name":"Client"},
-  {"name":"Création"},
-  {"name":"Dernière modification"},
-  {"name":"Etat"}
+  {"name":"N° devis",
+    "value":"num_devis"},
+  {"name":"Commercial",
+    "value":"nom_commercial"},
+  {"name":"Client",
+    "value":"nom_client"},
+  {"name":"Création",
+    "value":"date_creation"},
+  {"name":"Dernière modification",
+    "value":"date_modif"},
+  {"name":"Etat",
+    "value":"etat"}
 ];
 var devis=  [{
   "id_devis":"1",

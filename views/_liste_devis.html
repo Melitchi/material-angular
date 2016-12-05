@@ -2,7 +2,7 @@
   <md-content>
     <md-list >
       <!--<md-subheader class="md-no-sticky"></md-subheader>-->
-      <md-list-item class="md-2-line contact-item" ng-repeat="data in datas">
+      <md-list-item class="md-2-line contact-item" ng-repeat="data in datas | orderBy:sortType:sortReverse | filter:searchText">
       <div class="md-list-item-text compact">
         <span><h3>{{data.num_devis}}</h3>{{data.nom_client}}</span>
         <p>Créé le {{data.date_creation}} Dernière modification le {{data.date_modif}}</p>
