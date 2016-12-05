@@ -1,4 +1,4 @@
-<div id="list" ng-controller="listCtrl" layout="column" ng-cloak>
+<div id="list" layout="column" ng-cloak>
   <md-content>
     <md-list >
       <!--<md-subheader class="md-no-sticky"></md-subheader>-->
@@ -7,8 +7,11 @@
         <span><h3>{{data.num_devis}}</h3>{{data.nom_client}}</span>
         <p>Créé le {{data.date_creation}} Dernière modification le {{data.date_modif}}</p>
 
-        <md-button class="md-secondary">
-          <i class="material-icons">edit</i>
+        <md-button class="md-secondary"  aria-label="Edit">
+          <ng-md-icon icon="create"></ng-md-icon>
+        </md-button>
+        <md-button class="md-secondary" aria-label="Delete">
+          <ng-md-icon icon="delete"></ng-md-icon>
         </md-button>
       </div>
       <md-divider></md-divider>

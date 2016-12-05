@@ -14,16 +14,16 @@
           <md-option ng-value="label.value" ng-repeat="label in labels ">{{ label.name }}</md-option>
         </md-select>
       </md-input-container>
-      <md-input-container flex="15">
-        <md-button aria-label="Search" ng-click="showSearch = !showSearch">
-          <ng-md-icon icon="search"></ng-md-icon>
+      <md-input-container flex="5">
+        <md-button aria-label="reverse" ng-click="sortReverse = !sortReverse">
+          <ng-md-icon icon="keyboard_arrow_up"></ng-md-icon>
         </md-button>
       </md-input-container>
     </div>
     <md-card-content>
       <div ng-if="displayDevis" ng-include="'./views/_liste_devis.html'"></div>
-      <div ng-if="displayCatalogue" ng-include="'_liste_catalogue.html'"></div>
-      <div ng-if="displayFournisseur" ng-include="'_liste_fournisseurs.html'"></div>
+      <div ng-if="displayCatalogue" ng-include="'./views/_liste_catalogue.html'"></div>
+      <div ng-if="displayFournisseur" ng-include="'./views/_liste_fournisseurs.html'"></div>
     </md-card-content>
     <md-card-footer>
 
