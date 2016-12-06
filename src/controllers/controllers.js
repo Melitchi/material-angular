@@ -25,7 +25,7 @@ app
         });
     })
 /////////////////////// liste controller  ///////////////////////////////////////////////////
-.controller('listCtrl',  function ($scope, $routeParams, devisProvider) {
+.controller('listCtrl',  function ($scope, $routeParams, devisProvider, fournisseursProvider) {
   console.log("heyo!");
   var param=$routeParams.param; // on récupère la valeur passée dans l'url
   $scope.displayDevis=false;
@@ -70,10 +70,13 @@ app
     break;
     case "catalogue":
       $scope.pageTitle ="Catalogue";
+
       $scope.displayCatalogue=true;
     break;
     case "fournisseurs":
       $scope.pageTitle ="Liste des fournisseurs";
+      $scope.datas = fournisseursProvider.getFournisseurs();
+      $scope.labels=fournisseursProvider.getFournisseursLabels();
       $scope.displayFournisseur=true;
     break;
     default:
