@@ -25,7 +25,7 @@ app
         });
     })
 /////////////////////// liste controller  ///////////////////////////////////////////////////
-.controller('listCtrl',  function ($scope, $routeParams, devisProvider, fournisseursProvider) {
+.controller('listCtrl',  function ($scope, $routeParams, devisProvider, fournisseursProvider,$mdDialog) {
   console.log("heyo!");
   var param=$routeParams.param; // on récupère la valeur passée dans l'url
   $scope.displayDevis=false;
@@ -81,4 +81,17 @@ app
     break;
     default:
   }
+  $scope.showConfirm = function(event) {
+      var confirm = $mdDialog.confirm()
+         .title('Etes-vous sur de vouloir supprimer cet élément?')
+         .ariaLabel('TutorialsPoint.com')
+         .targetEvent(event)
+         .ok('Oui')
+         .cancel('Non');
+         $mdDialog.show(confirm).then(function() {
+            $scope.status = 'Record deleted successfully!';
+            }, function() {
+               $scope.status = 'You decided to keep your record.';
+         });
+   };
 })

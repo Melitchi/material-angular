@@ -7,10 +7,10 @@
         <span><h3>{{data.nom_fournisseur}}</h3>{{data.tel_fournisseur}}</span>
         <p>{{data.description_fournisseur}}</p>
 
-        <md-button class="md-secondary"  aria-label="Edit">
+        <md-button class="md-secondary" ng-click="" aria-label="Edit">
           <ng-md-icon icon="create"></ng-md-icon>
         </md-button>
-        <md-button class="md-secondary" aria-label="Delete">
+        <md-button class="md-secondary" ng-click="showConfirm($event)" aria-label="Delete">
           <ng-md-icon icon="delete"></ng-md-icon>
         </md-button>
       </div>
