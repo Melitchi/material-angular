@@ -1,7 +1,7 @@
 'use strict';
 app
 .config(function($mdThemingProvider) {
-  var customBlueMap = 		$mdThemingProvider.extendPalette('orange', {
+  var customBlueMap = 		$mdThemingProvider.extendPalette('green', {
     'contrastDefaultColor': 'light',
     'contrastDarkColors': ['50'],
     '50': 'ffffff'
