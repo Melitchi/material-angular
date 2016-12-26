@@ -1,7 +1,7 @@
 <div id="list" layout="column" ng-cloak>
   <md-content>
     <md-list >
-      <md-list-item ng-repeat="data in datas | orderBy:sortType:sortReverse | filter:searchText" ng-click="goToDevis(data.id_devis, $event)" class="noright">
+      <md-list-item ng-repeat="data in datas | orderBy:sortType:sortReverse | filter:searchText" ng-click="goToDevis(data.id_devis)" class="noright">
         <p>N°{{data.num_devis}}</p>
         <p> {{data.nom_client}}</p>
         <p>Créé le {{data.date_creation}} </p>
@@ -14,7 +14,6 @@
           <ng-md-icon icon="delete"></ng-md-icon>
         </md-button>
         <md-divider></md-divider>
-
       </md-list-item>
       </md-list>
   </md-list>

@@ -29,7 +29,7 @@ app
         };
     })
 /////////////////////// liste controller  ///////////////////////////////////////////////////
-.controller('listCtrl',  function ($scope, $routeParams, devisProvider, fournisseursProvider,$mdDialog) {
+.controller('listCtrl',  function ($scope, $routeParams,$location, devisProvider, fournisseursProvider,$mdDialog) {
 
   var param=$routeParams.param; // on récupère la valeur passée dans l'url
   //initialisation des variables
@@ -64,7 +64,10 @@ app
       $scope.datas = devisProvider.getDevis();
       $scope.labels=devisProvider.getDevisLabels();
       $scope.displayDevis=true;
-
+      $scope.goToDevis=function($event) {
+        console.log("/devis/"+$event);
+        $location.url("/devis/"+$event);
+      }
       break;
     case "fournisseurs":
       $scope.pageTitle ="Liste des fournisseurs";
@@ -74,7 +77,7 @@ app
     break;
     default:
   }
-  $scope.showConfirm = function(event) {
+  $scope.showConfirm = function($event) {
       var confirm = $mdDialog.confirm()
          .title('Etes-vous sur de vouloir supprimer cet élément?')
          .ariaLabel('TutorialsPoint.com')
@@ -110,4 +113,7 @@ app
 })
 .controller('compteCtrl',  function ($scope, $routeParams, userProvider,$mdDialog) {
   $scope.user=userProvider.getUser();
+})
+.controller('editDevisCtrl', function ($scope, $routeParams, devisProvider,$mdDialog) {
+  $scope.datas=devisProvider.getaDevis();
 })
