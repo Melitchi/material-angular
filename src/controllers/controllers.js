@@ -40,10 +40,10 @@ app
   /// Gestion de l'icône d
   $scope.setReverseIcon = function (){
     if ( $scope.sortReverse == false) {
-      $scope.reverseIcon ="keyboard_arrow_down"
+      $scope.reverseIcon ="ic_keyboard_arrow_down_black_24px"
       console.log("false "+$scope.reverseIcon);
     }else {
-      $scope.reverseIcon ="keyboard_arrow_up"
+      $scope.reverseIcon ="ic_keyboard_arrow_up_black_24px"
       console.log("true "+$scope.reverseIcon);
     }
   };
