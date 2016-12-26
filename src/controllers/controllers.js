@@ -23,6 +23,10 @@ app
                     break;
             }
         });
+        $scope.showProfile = function(event) {
+          $location.url("/compte");
+          // TO DO ajouter en parametre identifiant user
+        };
     })
 /////////////////////// liste controller  ///////////////////////////////////////////////////
 .controller('listCtrl',  function ($scope, $routeParams, devisProvider, fournisseursProvider,$mdDialog) {
@@ -103,4 +107,7 @@ app
          });
    };
 
+})
+.controller('compteCtrl',  function ($scope, $routeParams, userProvider,$mdDialog) {
+  $scope.user=userProvider.getUser();
 })
