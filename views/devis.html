@@ -1,6 +1,6 @@
 <div ng-cloak ng-app="Madera">
  <md-content class="md-padding" >
-        <div layout="column" layout-gt-xs="row" >
+        <div layout="row"  layout-xs="column" >
            <md-card flex flex-gt-xs="50">
                <h2>Client</h2>
                <md-card-content>
@@ -26,7 +26,15 @@
              <md-card flex >
                  <h2>Devis</h2>
                  <md-card-content>
-                     <p>Some content</p>
+                   <div layout="row">
+                     <p>Référence: {{devisData.num_devis}}</p>
+                     <p flex></p>
+                     <p>Statut: {{devisData.etat}}</p>
+                   </div>
+                   <p>Date de création: {{devisData.date_modif}}</p>
+                   <p>Dernière modification: {{devisData.date_modif}}</p>
+                   <md-divider></md-divider>
+
                  </md-card-content>
              </md-card>
          </div>
