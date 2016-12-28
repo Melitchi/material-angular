@@ -64,6 +64,7 @@ app
       $scope.datas = devisProvider.getDevis();
       $scope.labels=devisProvider.getDevisLabels();
       $scope.displayDevis=true;
+      //consulter page devis (id devis en parametre)
       $scope.goToDevis=function($event) {
         console.log("/devis/"+$event);
         $location.url("/devis/"+$event);
@@ -77,6 +78,7 @@ app
     break;
     default:
   }
+  //Modal de confirmation de suppression
   $scope.showConfirm = function($event) {
       var confirm = $mdDialog.confirm()
          .title('Etes-vous sur de vouloir supprimer cet élément?')
@@ -114,6 +116,9 @@ app
 .controller('compteCtrl',  function ($scope, $routeParams, userProvider,$mdDialog) {
   $scope.user=userProvider.getUser();
 })
-.controller('editDevisCtrl', function ($scope, $routeParams, devisProvider,$mdDialog) {
-  $scope.datas=devisProvider.getaDevis();
+.controller('editDevisCtrl', function ($scope, $routeParams, devisProvider,userProvider,$mdDialog) {
+  $scope.devisData=devisProvider.getaDevis();
+  $scope.clientData=userProvider.getClient();
+  $scope.comData=userProvider.getUser();
+
 })

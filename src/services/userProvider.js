@@ -10,22 +10,14 @@ var user=
     "pass":"motdepasse"
     }
 ;
-var client=[
+var client=
   {
     "id":"1",
     "nom":"Lionheart",
     "prenom":"Squall",
     "telephone":"0296375474",
-    "mail":"squall.lionheart@gmail.com",
-  },
-  {
-    "id":"2",
-    "nom":"Hedgehog",
-    "prenom":"Sonic",
-    "telephone":"0296375368",
-    "mail":"sonic.hedgehog@gmail.com",
-    }
-];
+    "mail":"squall.lionheart@gmail.com"
+  };
 app.service('userProvider', function(){
   this.getUser = function(){
     return user;
