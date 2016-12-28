@@ -111,14 +111,16 @@ app
                $scope.status = 'You decided to keep your record.';
          });
    };
-
 })
 .controller('compteCtrl',  function ($scope, $routeParams, userProvider,$mdDialog) {
   $scope.user=userProvider.getUser();
 })
-.controller('editDevisCtrl', function ($scope, $routeParams, devisProvider,userProvider,$mdDialog) {
+.controller('editDevisCtrl', function ($scope, $routeParams, devisProvider,userProvider,catalogueProvider,$mdDialog) {
   $scope.devisData=devisProvider.getaDevis();
   $scope.clientData=userProvider.getClient();
   $scope.comData=userProvider.getUser();
-
+  $scope.gammes=catalogueProvider.getGammes();
+  $scope.modules=catalogueProvider.getModules();
+  $scope.composants=catalogueProvider.getComposants();
+  // faire fonctions pour mettre à jour les selects en fonction des choix
 })
