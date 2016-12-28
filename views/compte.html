@@ -2,13 +2,22 @@
   <md-card>
     <h2>Infos personnelles</h2>
   <br>
-  <md-content class="md-no-momentum">
-    <md-input-container class="md-icon-float md-block">
-      <label>Nom</label>
-      <md-icon md-svg-src="ressources/img/icons/ic_person_black_24px.svg" class="name"></md-icon>
-      <input ng-model="user.nom" type="text" disabled="">
+  <md-content class="md-padding">
+    <div layout="row">
+      <md-input-container class="md-icon-float md-block">
+        <label>Prénom</label>
+        <md-icon md-svg-src="ressources/img/icons/ic_person_black_24px.svg" class="name"></md-icon>
+        <input ng-model="user.prenom" type="text" disabled="">
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block">
+        <label>Nom</label>
+        <input ng-model="user.nom" type="text" disabled="">
+      </md-input-container>
+    </div>
+    <md-input-container class="md-block">
+      <md-icon md-svg-src="ressources/img/icons/ic_business_black_24px.svg"></md-icon>
+      <input ng-model="user.matricule" type="text" placeholder="Matricule" disabled="">
     </md-input-container>
-
     <md-input-container class="md-block">
       <md-icon md-svg-src="ressources/img/icons/ic_call_black_24px.svg"></md-icon>
       <input ng-model="user.telephone" type="text" placeholder="Téléphone" disabled="">
