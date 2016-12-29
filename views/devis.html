@@ -40,20 +40,20 @@
           <div layout="row">
             <md-input-container flex>
               <label>Gammes</label>
-              <md-select ng-model="sortType1">
-                <md-option ng-value="gamme.id_gamme" ng-repeat="gamme in gammes ">{{ gamme.nom_gamme }}</md-option>
+              <md-select ng-model="gamme">
+                <md-option ng-value="g.id_gamme" ng-repeat="g in gammes "  ng-click="select.module=null;select.composant=null">{{ g.nom_gamme }}</md-option>
               </md-select>
             </md-input-container>
             <md-input-container flex>
               <label>Modules</label>
-              <md-select ng-model="sortType2">
-                <md-option ng-value="module.id_module" ng-repeat="module in modules">{{ module.nom_module }}</md-option>
+              <md-select ng-model="module">
+                <md-option ng-repeat="m in modules" ng-value="m.id_module" ng-if="getMatchModule(m._id_gamme)" ng-click="select.composant=null">{{ m.nom_module }}</md-option>
               </md-select>
             </md-input-container>
             <md-input-container flex>
               <label>Composants</label>
-              <md-select ng-model="sortType3">
-                <md-option ng-value="composant.id_composant" ng-repeat="composant in composants ">{{ composant.nom_composant }}</md-option>
+              <md-select ng-model="composant">
+                <md-option ng-value="c.id_composant" ng-repeat="c in composants " ng-if="getMatchComposant(c._id_module)">{{ c.nom_composant }}</md-option>
               </md-select>
             </md-input-container>
             <md-input-container flex="10">
