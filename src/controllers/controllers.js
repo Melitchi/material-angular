@@ -126,11 +126,11 @@ app
 
   // initialisation des choix
   $scope.choixCatalogue = [];
-  /*$scope.addChoixCatalogueRow = function (inputNomGamme, inputNomModule, inputNomComposant) {
-    $scope.choixCatalogue.push({ 'id_row': new Date().getTime(), 'nom_gamme': inputNomGamme, 'nom_module': inputNomModule, 'nom_composant': inputNomComposant, 'prix_composant_ht_euros': $scope.getComposantPrix() });
-  };*/
+  $scope.addChoixCatalogueRow = function (inputNomGamme, inputNomModule, inputNomComposant) {
+    $scope.choixCatalogue.push({ 'id_row': new Date().getTime(), 'nom_gamme': inputNomGamme, 'nom_module': inputNomModule, 'nom_composant': inputNomComposant });
+  };
   // Supprimer des éléments de la liste des choix
-  /*$scope.removeChoixCatalogueRow = function (inputIdRow) {
+  $scope.removeChoixCatalogueRow = function (inputIdRow) {
      var index;
      for (var i in $scope.choixCatalogue) {
        var id_row = $scope.choixCatalogue[i].id_row;
@@ -140,23 +140,24 @@ app
        }
      }
      $scope.choixCatalogue.splice(index, 1);
-};*/
+};
 
   //Récupérer les modules correspondants à la gamme
-  $scope.getMatchModule = function (inputIdGamme) {
+  $scope.getMatchModule = function (inputId,inputIdGamme) {
     var resultMatchModule = false;
+    console.log(inputId);
     for (var i = 0 ; i < inputIdGamme.length ; i++){
-      if (inputIdGamme[i] == $scope.gamme){
+      if (inputIdGamme[i] == inputId){
         resultMatchModule = true
       }
     }
     return resultMatchModule;
   }
   //Récupérer les composants correspondants au module
-  $scope.getMatchComposant = function (inputIdComposant) {
+  $scope.getMatchComposant = function (inputId,inputIdComposant) {
     var resultMatchComposant = false;
     for (var i = 0 ; i < inputIdComposant.length ; i++){
-      if (inputIdComposant[i] == $scope.module){
+      if (inputIdComposant[i] == inputId){
         resultMatchComposant = true
       }
     }

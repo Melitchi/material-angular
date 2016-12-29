@@ -1,6 +1,6 @@
 <div id="list" layout="column" ng-cloak>
   <md-content>
-    <md-list >
+    <md-list  >
       <md-list-item ng-repeat="data in datas | orderBy:sortType:sortReverse | filter:searchText" ng-click="goToDevis(data.id_devis)" class="noright">
         <p>N°{{data.num_devis}}</p>
         <p> {{data.nom_client}}</p>
