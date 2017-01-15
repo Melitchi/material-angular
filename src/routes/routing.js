@@ -5,7 +5,7 @@ function ($routeProvider) {
   $routeProvider
   .when('/index', {
     templateUrl: 'index.html',
-    controller: 'connectCtrl'
+    controller: 'indexCtrl'
   })
   .when('/accueil', {
     templateUrl: 'views/accueil.html',
@@ -19,20 +19,16 @@ function ($routeProvider) {
     templateUrl: 'views/catalogue.html',
     controller: 'catalogueCtrl'
   })
-  .when('/edit_devis', {
-    templateUrl: 'views/devis.html',
-    controller: 'formCtrl'
-  })
   .when('/compte', {
     templateUrl: 'views/compte.html',
     controller: 'compteCtrl'
   })
-  .when('/devis/:param', {
+  .when('/devis/:param/:edit', {
     templateUrl: 'views/devis.html',
     controller: 'editDevisCtrl'
   })
-  .otherwise({
-    redirectTo: '/liste/devis'
+  .when('/signin', {
+    templateUrl: 'views/signin.html',
+    controller: 'signinCtrl'
   });
-}
-])
+}])

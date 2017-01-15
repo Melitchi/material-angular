@@ -1,26 +1,46 @@
 .done-true {
       text-decoration: line-through;
-      color: #1b906366;
+      color: #1b9063;
 }
 
 .done-false {
       color: orangered;
 }
+
+table tbody tr:hover{
+   background-color: rgba(158,158,158,0.2);
+}
 .inputdemoIcons {
-.right-icon {
-  position: absolute;
-  top: 4px;
-  right: 2px;
-  left: auto;
-  margin-top: 0;
-}
-}
-  .inputdemoIcons .inputIconDemo {
-    min-height: 48px; }
-  .inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.email {
-    color: green; }
-  .inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.name {
-    color: dodgerblue; }
-  .inputdemoIcons md-input-container.md-input-invalid > md-icon.email,
-  .inputdemoIcons md-input-container.md-input-invalid > md-icon.name {
-    color: red; }
+      .right-icon {
+      position: absolute;
+      top: 4px;
+      right: 2px;
+      left: auto;
+      margin-top: 0;
+      }
+ }
+   .inputdemoIcons .inputIconDemo {
+     min-height: 48px; }
+   .inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.email {
+     color: green; }
+   .inputdemoIcons md-input-container:not(.md-input-invalid) > md-icon.name {
+     color: dodgerblue; }
+   .inputdemoIcons md-input-container.md-input-invalid > md-icon.email,
+   .inputdemoIcons md-input-container.md-input-invalid > md-icon.name {
+     color: red; }
+     .fabSpeedDialdemoBasicUsage .text-capitalize {
+  text-transform: capitalize; }
+
+.fabSpeedDialdemoBasicUsage .md-fab:hover, .fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+  background-color: #000 !important; }
+
+.fabSpeedDialdemoBasicUsage p.note {
+  font-size: 1.2rem; }
+
+.fabSpeedDialdemoBasicUsage .lock-size {
+  min-width: 300px;
+  min-height: 300px;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto; }

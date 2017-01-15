@@ -94,7 +94,11 @@ app.service('devisProvider', function(){
     return devis;
   }
   this.deleteDevis = function(inputDevis, inputNumDevis){
+<<<<<<< HEAD
+    inputDevis.splice(inputNumDevis, 1);
+=======
     inputDevis.splice(getIndexDevisFromId(inputDevis, inputNumDevis), 1);
+>>>>>>> 4f2630c0b3cb56a5898504e0fdc721bbb7e28293
   }
 
   this.getaDevis = function(){
